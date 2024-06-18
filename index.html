@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>SAMEDIA</title>
-    <link rel="stylesheet" href="./src/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
     <section class="category">
-        <div class="category__container">
-            <img class="category__greenLeaf decorLeaf" src="./src/img/зеленыйЛист.svg" alt="Зелёный лист">
-            <h2 class="category__title">
-                Категории
-            </h2>
-            <ul class="category__items">
-                <li class="category__item">
-                    <a class="category__item-link" href="#">
-                        <span class="category__item-bigBubbles"></span>
-                        <span class="category__item-mediumBubbles"></span>
-                        <span class="category__item-smallBubbles"></span>
-                        <p class="category__item-text">Пестициды</p>
-                        <div class="category__item-image"></div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <a class="category__item-link" href="#">
-                        <span class="category__item-bigBubbles"></span>
-                        <span class="category__item-mediumBubbles"></span>
-                        <span class="category__item-smallBubbles"></span>
-                        <p class="category__item-text">
-                            Культуры
-                        </p>
-                        <div class="category__item-image"></div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <img class="category__item-brownLeaf decorLeaf" src="./src/img/коричневыйЛист.svg" alt="Коричневый лист">
-                    <a class="category__item-link" href="#">
-                        <span class="category__item-bigBubbles"></span>
-                        <span class="category__item-mediumBubbles"></span>
-                        <span class="category__item-smallBubbles"></span>
-                        <p class="category__item-text">
-                            Вредители
-                        </p>
-                        <div class="category__item-image"></div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <a class="category__item-link" href="#">
-                        <span class="category__item-bigBubbles"></span>
-                        <span class="category__item-mediumBubbles"></span>
-                        <span class="category__item-smallBubbles"></span>
-                        <p class="category__item-text">
-                            Действующие вещества
-                        </p>
-                        <div class="category__item-image"></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+      <div class="category__container">
+        <img
+          class="category__greenLeaf decorLeaf"
+          src="./src/img/зеленыйЛист.svg"
+          alt="Зелёный лист"
+        />
+        <h2 class="category__title">Категории</h2>
+        <ul class="category__items">
+          <li class="category__item">
+            <a id="pesticides" class="category__item-link" href="#pesticides">
+              <span class="category__item-bigBubbles"></span>
+              <span class="category__item-mediumBubbles"></span>
+              <span class="category__item-smallBubbles"></span>
+              <p class="category__item-text">Пестициды</p>
+              <div class="category__item-image"></div>
+            </a>
+          </li>
+          <li class="category__item">
+            <a id="culture" class="category__item-link" href="#culture">
+              <span class="category__item-bigBubbles"></span>
+              <span class="category__item-mediumBubbles"></span>
+              <span class="category__item-smallBubbles"></span>
+              <p class="category__item-text">Культуры</p>
+              <div class="category__item-image"></div>
+            </a>
+          </li>
+          <li class="category__item">
+            <img
+              class="category__item-brownLeaf decorLeaf"
+              src="./src/img/коричневыйЛист.svg"
+              alt="Коричневый лист"
+            />
+            <a id="pests" class="category__item-link" href="#pests">
+              <span class="category__item-bigBubbles"></span>
+              <span class="category__item-mediumBubbles"></span>
+              <span class="category__item-smallBubbles"></span>
+              <p class="category__item-text">Вредители</p>
+              <div class="category__item-image"></div>
+            </a>
+          </li>
+          <li class="category__item">
+            <a id="substances" class="category__item-link" href="#substances">
+              <span class="category__item-bigBubbles"></span>
+              <span class="category__item-mediumBubbles"></span>
+              <span class="category__item-smallBubbles"></span>
+              <p class="category__item-text">Действующие вещества</p>
+              <div class="category__item-image"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
     <script defer>
-        function moveX(el, position, reverse = false) {
-            el.style.setProperty('--x', `${reverse ? '' : '-'}${position * 5}px`);
-        }
-        function moveY(el, reverse = false) {
-            el.style.setProperty('--y', `${reverse ? '-' : ''}10px`);
-        }
+      function moveX(el, position, reverse = false) {
+        el.style.setProperty("--x", `${reverse ? "" : "-"}${position * 5}px`);
+      }
+      function moveY(el, reverse = false) {
+        el.style.setProperty("--y", `${reverse ? "-" : ""}10px`);
+      }
 
-        function resetElPos(el) {
-            el.style.setProperty('--y', '0');
-        }
-        const greenLeaf = document.querySelector('.category__greenLeaf');
-        const brownLeaf = document.querySelector('.category__item-brownLeaf')
-        const categoryItems = document.querySelectorAll('.category__item');
-        for (let i = 0; i < categoryItems.length; i++) {
-            categoryItems[i].addEventListener('mouseover', () => {
-                moveX(greenLeaf, categoryItems.length - i);
-                moveX(brownLeaf, categoryItems.length - i, true);
-                moveY(greenLeaf);
-                moveY(brownLeaf);
-            });
+      function resetElPos(el) {
+        el.style.setProperty("--y", "0");
+      }
+      const greenLeaf = document.querySelector(".category__greenLeaf");
+      const brownLeaf = document.querySelector(".category__item-brownLeaf");
+      const categoryItems = document.querySelectorAll(".category__item");
+      for (let i = 0; i < categoryItems.length; i++) {
+        categoryItems[i].addEventListener("mouseover", () => {
+          moveX(greenLeaf, categoryItems.length - i);
+          moveX(brownLeaf, categoryItems.length - i, true);
+          moveY(greenLeaf);
+          moveY(brownLeaf);
+        });
 
-            categoryItems[i].addEventListener('mouseout', () => {
-                resetElPos(greenLeaf);
-                resetElPos(brownLeaf);
-            });
-        }
+        categoryItems[i].addEventListener("mouseout", () => {
+          resetElPos(greenLeaf);
+          resetElPos(brownLeaf);
+        });
+      }
     </script>
-</body>
+  </body>
 </html>

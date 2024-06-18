@@ -264,6 +264,7 @@ a {
 @media screen and (max-width: 1440px) {
   .category__greenLeaf {
     top: 95px;
+    left: 15px;
   }
 }
 @media screen and (max-width: 770px) {
